@@ -1,6 +1,6 @@
 # FuzzyJS
 
-WIP  - A React version of [FuzzyJS](http://github.com/alocay/fuzzjs)
+WIP  - A React version of [FuzzyJS](http://github.com/alocay/FuzzyJS)
 
 ## Examples
 _(Coming soon)_

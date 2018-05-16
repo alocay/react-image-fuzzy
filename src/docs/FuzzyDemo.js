@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Fuzzy, { Filters } from './Fuzzy/Fuzzy.js';
+import Fuzzy, { Filters } from '../lib';
 
-const FuzzyImage = require('../../../assets/fuzzy_sm.jpg');
+const FuzzyImage = require('./fuzzy_sm.jpg');
 
 class FuzzyDemo extends Component{
     render(){

@@ -108,6 +108,8 @@ class FuzzyLogic {
         pixelSize = pixelSize <= 0 ? 1 : pixelSize;
         pixelSize = pixelSize >= width ? width - 1 : pixelSize;
 
+        console.log(pixelSize);
+        
         for (var i = 0; i < width; i += pixelSize) {
             for (var j = 0; j < height; j += pixelSize) {
                 var offsetx = (pixelSize / 2) | 0;
@@ -122,10 +124,10 @@ class FuzzyLogic {
                 }
 
                 var pixel = this.getPixel(imageData, i + offsetx, j + offsety);
-
+                
                 for (var x = i; x < i + pixelSize && x < width; x++) {
                     for (var y = j; y < j + pixelSize && y < height; y++) {
-                        this.setPixel(x, y, pixel);
+                        this.setPixel(imageData, x, y, pixel);
                     }
                 }
             }
@@ -134,22 +136,25 @@ class FuzzyLogic {
     
     static getPixel(imageData, x, y) {
         var index = (x + y * imageData.width) * 4;
-        return new Pixel(
+        
+        const p = new Pixel(
             imageData.data[index + 0],
             imageData.data[index + 1],
             imageData.data[index + 2],
             imageData.data[index + 3]
         );
+        
+        return p;
     }
     
     static setPixel(imageData, x, y, pixel) {
         var index;
         
         index = (x + y * imageData.width) * 4;
-        imageData[index + 0] = pixel.R();
-        imageData[index + 1] = pixel.G();
-        imageData[index + 2] = pixel.B();
-        imageData[index + 3] = pixel.A();
+        imageData.data[index + 0] = pixel.R();
+        imageData.data[index + 1] = pixel.G();
+        imageData.data[index + 2] = pixel.B();
+        imageData.data[index + 3] = pixel.A();
     }
 }
 

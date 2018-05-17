@@ -14,14 +14,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/alocay/fuzzy-react.git"
+        "url": "git+https://github.com/alocay/react-image-fuzzy.git"
     },
     "author": "Armando Locay",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/alocay/fuzzy-react/issues"
+        "url": "https://github.com/alocay/react-image-fuzzy/issues"
     },
-    "homepage": "https://github.com/alocay/fuzzy-react#readme",
+    "homepage": "https://github.com/alocay/react-image-fuzzy#readme",
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.3",

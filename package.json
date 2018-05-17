@@ -1,45 +1,46 @@
 {
-  "name": "fuzzy-react",
-  "version": "1.0.0",
-  "description": "A simple ReactJS component for client-side image processing",
-  "main": "index.js",
-  "directories": {
+    "name": "react-image-fuzzy",
+    "version": "1.0.0",
+    "description": "A simple ReactJS component for client-side image processing",
+    "main": "lib/index.js",
+    "directories": {
     "doc": "docs",
     "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alocay/fuzzy-react.git"
-  },
-  "author": "Armando Locay",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alocay/fuzzy-react/issues"
-  },
-  "homepage": "https://github.com/alocay/fuzzy-react#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^4.2.0",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
-  },
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
-  }
+    },
+        "scripts": {
+        "lib": "babel src/lib -d lib --copy-files",
+        "lib:watch": "babel src/lib -w -d lib --copy-files",
+        "start": "webpack-dev-server --mode development",
+        "prod": "webpack --mode production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alocay/react-image-fuzzy.git"
+    },
+    "author": "Armando Locay",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alocay/react-image-fuzzy/issues"
+    },
+    "homepage": "https://github.com/alocay/react-image-fuzzy#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "css-loader": "^0.28.11",
+        "file-loader": "^1.1.11",
+        "html-webpack-plugin": "^3.2.0",
+        "image-webpack-loader": "^4.2.0",
+        "style-loader": "^0.21.0",
+        "webpack": "^4.8.3",
+        "webpack-cli": "^2.1.3",
+        "webpack-dev-server": "^3.1.4"
+    },
+    "peerDependencies": {
+        "classnames": "^2.2.5",
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2"
+    }
 }

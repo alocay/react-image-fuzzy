@@ -1,62 +1,88 @@
 # FuzzyJS
 
-A simple image filter/processing JavaScript library
+A simple React component for image filter/processing
 
-[Simple Fuzzy JS Demo](http://alocay.github.io/projects/fuzzyjs/index.html)
+[Simple React Fuzzy  Demo](http://alocay.github.io/projects/fuzzyjs/index.html)
 
 ## Getting Started
-### In the browser
-Download the [minified version][min] or the [development version][max].
-
-[min]: https://raw.github.com/alocay/FuzzyJS/master/dist/fuzzy.min.js
-[max]: https://raw.github.com/alocay/FuzzyJS/master/dist/fuzzy.js
-
-In your web page:
-
-```html
-<script src="dist/fuzzy.min.js"></script>
-<script>
-var canvas = document.getElementById("myCanvas");
-var img = document.getElementById("myImage");
-var img2 = document.getElementById("myImage2");
-var img3 = document.getElementById("myImage3");
-
-var addNewImage = function (image) {
-	document.body.appendChild(image);
-};
-
-// pixelates and sets the modified image to 'img'
-fuzzy(canvas).pixelate(5).draw(img); 
-
-// inverts and invokes the given callback with the new modified image
-fuzzy(img2).invert().draw(null, { callback: addNewImage, width: 500 });
-
-// adds a color filter and sets 'img3' to the modified image
-// also calls 'addNewImage' with a new image (with the same modification) with a width of 500
-fuzzy(canvas).colorFilter(fuzzy.colorFilters.RED).draw(img3, { callback: addNewImage, width: 500 });
-
-// inverts and returns the canvas
-var newCanvas = fuzzy(canvas).invert().draw(); 
-</script>
+Download the package via NPM 
+```
+npm install react-image-fuzzy
 ```
 
-There are various other operations, please refer to the documentation.
+Import the package in your JSX file
 
-## Documentation
-[Simple documentation](https://github.com/alocay/FuzzyJS/blob/master/docs/fuzzy-js-docs.md)
-More to come.
+  **ES6:**  `import Fuzzy from 'react-image-fuzzy';`
+**>ES6:**  `require('react-image-fuzzy');`
 
 ## Examples
-_(Coming soon)_
+Using React Fuzzy is simple. Once imported, just use the <Fuzzy /> component, providing the image, the filters, and any necessary options:
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+```jsx
+const myImage = require('./path/to/img.png');
+...
+render() {
+    <div>
+        <Fuzzy url={myImage} 
+                   filter={'colorFilter'}
+                   option={'red'} />
+    </div>
+}
+```           
 
-_Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt. You'll find source code in the "lib" subdirectory!_
+A single filter and option can be provided via `filter` and `option` property but an array of filter objects can also be passed to the `filter` property. When passing an array of filters, a filter object is required that contains information on the filter and options:
 
-## Release History
-_(Nothing yet)_
+```
+const filters = [{
+   filter: 'colorFilter',
+   option: 'red'
+}];
+```
+Providing an array of filters will cause all filters to be applied one after the other:
+
+```
+// This will apply the red color filter first and then the box blur
+const filters = [
+    {
+        filter: 'colorFilter',
+        option: 'red'
+    },
+    {
+        filter: 'boxBlur',
+        option: 5
+    }
+];
+...
+<Fuzzy url={myImage} 
+           filter={filters} />
+```
+
+By default React Fuzzy will display a `canvas` element for the resulting image. If an `img` element is desired, just use the `useImg` property:
+
+```
+<Fuzzy url={myImage} 
+           filter={filters} 
+           useImg={true} />
+```
+
+###Available filters
+- Color filter
+- Invert
+- Invert w/ color
+- Pixelation
+- Various blurs
+- Emboss
+- Luminosity
+- Sharpen
+- Edge trace
+- Can also provide your own convolution matrix
+
+Refer to the documentation for more information.
+
+## Documentation
+[Basic documentation](https://github.com/alocay/FuzzyJS/blob/master/docs/fuzzy-js-docs.md)
+More to come.
 
 ## License
-Copyright (c) 2014 Armando Locay  
+Copyright (c) 2018 Armando Locay  
 Licensed under the MIT license.

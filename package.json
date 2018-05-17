@@ -8,9 +8,10 @@
     "lib": "lib"
     },
         "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "lib": "babel src/lib -d lib --copy-files",
+        "lib:watch": "babel src/lib -w -d lib --copy-files",
         "start": "webpack-dev-server --mode development",
-        "build": "webpack --mode production"
+        "prod": "webpack --mode production"
     },
     "repository": {
         "type": "git",

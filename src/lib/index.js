@@ -10,7 +10,7 @@ const Filters = {
     Pixelate: "pixelate",
     BoxBlur: "boxblur",
     HorizontalBlur: "horizontalblur",
-    VeriticalBlur: "verticalblur",
+    VerticalBlur: "verticalblur",
     GuassianBlur: "guassianblur",
     Emboss: "emboss",
     Luminosity: "luminosity",
@@ -61,19 +61,40 @@ class Fuzzy extends Component{
                 FuzzyLogic.colorFilter(this.imageData, parameter);
                 break;
             case Filters.Invert: 
-                FuzzyLogic.invert(this.imageData);
+                FuzzyLogic.invert(this.imageData, parameter);
+                break;
+            case Filters.Greyscale:
+                FuzzyLogic.greyscale(this.imageData);
                 break;
             case Filters.Pixelate:
                 FuzzyLogic.pixelate(this.imageData, parameter, this.originalImage.width, this.originalImage.height);
                 break;
+            case Filters.BoxBlur:
+                FuzzyLogic.boxBlur(this.imageData, parameter);
+                break;
             case Filters.HorizontalBlur:
                 FuzzyLogic.horizontalBlur(this.imageData, parameter);
+                break;
+            case Filters.VerticalBlur:
+                FuzzyLogic.verticalBlur(this.imageData, parameter);
+                break;
+            case Filters.GuassianBlur:
+                FuzzyLogic.gaussianBlur(this.imageData, parameter);
                 break;
             case Filters.Emboss:
                 FuzzyLogic.emboss(this.imageData);
                 break;
+            case Filters.Sharpen:
+                FuzzyLogic.sharpen(this.imageData);
+                break;
+            case Filters.Luminosity:
+                FuzzyLogic.luminosity(this.imageData, parameter);
+                break;
             case Filters.Edge:
                 FuzzyLogic.edgetrace(this.imageData);
+                break;
+            case Filters.Convolution:
+                FuzzyLogic.convolution(this.imageData, parameter);
                 break;
         }
         

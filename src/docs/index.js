@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Demo from "./FuzzyDemo.js";
+import Demo from "./js/FuzzyDemo.js";
 
 ReactDOM.render(
   <Demo />,

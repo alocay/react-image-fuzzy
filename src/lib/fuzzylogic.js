@@ -150,15 +150,15 @@ class FuzzyLogic {
     }
   
     static gaussianBlur(imageData) {
-        this.convolution(imageData, Matrices.gaussianblur, 16);
+        this._convolution(imageData, Matrices.gaussianblur, 16);
     }
   
     static emboss(imageData) {
-        this.convolution(imageData, Matrices.emboss, 1);
+        this._convolution(imageData, Matrices.emboss, 1);
     }
   
     static sharpen(imageData) {
-        this.convolution(imageData, Matrices.sharpen, 1);
+        this._convolution(imageData, Matrices.sharpen, 1);
     }
   
     static luminosity(imageData, value) {
@@ -167,14 +167,18 @@ class FuzzyLogic {
 
         matrix[1][1] = value;
 
-        this.convolution(imageData, matrix, 1);
+        this._convolution(imageData, matrix, 1);
     }
   
     static edgetrace(imageData) {
-        this.convolution(imageData, Matrices.edge, 1);
+        this._convolution(imageData, Matrices.edge, 1);
     }
   
-    static convolution(imageData, matrix, divisor, offset) {        
+    static convolution(imageData, parameters) {        
+        this._convolution(imageData, parameters.matrix, parameters.divisor, parameters.offset);
+    }
+    
+    static _convolution(imageData, matrix, divisor, offset) {
         if(!matrix || !(matrix instanceof Array) || matrix.length !== 3) {
             console.log("Convolution matrix should be 3x3 matrix");
             return;

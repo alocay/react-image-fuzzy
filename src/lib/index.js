@@ -64,14 +64,22 @@ class Fuzzy extends Component{
                 FuzzyLogic.invert(this.imageData);
                 break;
             case Filters.Pixelate:
-                console.log(parameter + ' ' + this.originalImage.width + ' ' + this.originalImage.height);
                 FuzzyLogic.pixelate(this.imageData, parameter, this.originalImage.width, this.originalImage.height);
+                break;
+            case Filters.HorizontalBlur:
+                FuzzyLogic.horizontalBlur(this.imageData, parameter);
+                break;
+            case Filters.Emboss:
+                FuzzyLogic.emboss(this.imageData);
+                break;
+            case Filters.Edge:
+                FuzzyLogic.edgetrace(this.imageData);
                 break;
         }
         
         this.canvasContext.putImageData(this.imageData, 0, 0);
         
-        if (useImg)  {
+        if (useImg && this.imageFinal)  {
             this.imageFinal.src = this.canvasRef.current.toDataURL();
         }
     }
@@ -91,7 +99,8 @@ Fuzzy.propTypes = {
     filter: PropTypes.string.isRequired,
     parameter: PropTypes.oneOfType([
         PropTypes.string,
-        PropTypes.number
+        PropTypes.number,
+        PropTypes.object
     ]),
     useImg: PropTypes.bool
 };

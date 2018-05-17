@@ -17,6 +17,13 @@ class FuzzyDemo extends Component{
                 <Fuzzy url={FuzzyImage} 
                        filter={Filters.Pixelate}
                        parameter={5} />
+                <Fuzzy url={FuzzyImage} 
+                       filter={Filters.HorizontalBlur}
+                       parameter={8} />
+                <Fuzzy url={FuzzyImage} 
+                       filter={Filters.Emboss} />
+                <Fuzzy url={FuzzyImage} 
+                       filter={Filters.Edge} />
             </div>
         );
     }

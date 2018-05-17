@@ -1,0 +1,36 @@
+@import url(kube.min.css);
+/*@font-face {
+    font-family: tiza;
+    src: url(./tiza-webfont.woff); /* Tiza font courtesy of Pablo Caro. Found @ http://www.fontsquirrel.com/fonts/Tiza
+}*/
+body {
+  background: #222 url("./binding-dark.png") repeat;
+  /* binding-dark.png courtesy of Tia Newbury. Found @ http://subtlepatterns.com/ */
+  font-family: tiza, Verdana, Arial;
+  color: #dddddd; }
+  body a {
+    text-decoration: none;
+    color: #f03c69; }
+  body h1, body h5, body h6, body h2 {
+    color: #dddddd; }
+  body h1, body h5, body h6 {
+    margin-bottom: 0; }
+
+div.content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  max-width: 900px;
+  background: none repeat rgba(34, 34, 34, 0.3);
+  box-shadow: -8px 0px 5px 0px #111, 8px 0px 5px 0px #111; }
+  div.content div.header h6 {
+    font-size: 12px; }
+  div.content .group {
+    padding: 30px 0 30px 30px; }
+  div.content .group:nth-child(odd) {
+    background-color: rgba(102, 102, 102, 0.05); }
+  div.content .group:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03); }
+  div.content div.footer {
+    margin-top: 20px;
+    font-size: 12px; }

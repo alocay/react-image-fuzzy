@@ -1,5 +1,5 @@
 {
-  "name": "fuzzy-react",
+  "name": "react-image-fuzzy",
   "version": "1.0.0",
   "description": "A simple ReactJS component for client-side image processing",
   "main": "index.js",

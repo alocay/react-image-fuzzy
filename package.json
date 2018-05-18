@@ -11,7 +11,7 @@
         "lib": "babel src/lib -d lib --copy-files && documentation build lib/index.js -f md -o docs/react-fuzzy-docs.md",
         "lib:watch": "babel src/lib -w -d lib --copy-files",
         "start": "webpack-dev-server --mode development",
-        "prod": "webpack --mode production"
+        "docs": "webpack --mode production"
     },
     "repository": {
         "type": "git",

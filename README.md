@@ -95,7 +95,7 @@ By default React Fuzzy will display a `canvas` element for the resulting image. 
 Refer to the documentation for more information.
 
 ## Documentation
-[Basic documentation](https://github.com/alocay/FuzzyJS/blob/master/docs/fuzzy-js-docs.md)
+[Basic documentation](https://github.com/alocay/FuzzyJS/blob/master/docs/fuzzy-js-docs.md)  
 More to come.
 
 ## License

@@ -1,18 +1,13 @@
 import Pixel from './Pixel.js';
 
-/**
- * Colors used for filtering
- */
+// Colors used for filtering
 const Colors = {
     red: 'red',
     blue: 'blue',
     green: 'green'
 };
 
-/**
- * Various predefined convolution matrices used for effects
- * @api private
- */ 
+// Various predefined convolution matrices used for effects 
 const Matrices = {
     emboss: [
         [-2, -1, 0],
@@ -58,8 +53,8 @@ class FuzzyLogic {
     
     /**
      * Applies a color filter
-     * @param {imageData} The image data object (from canvas context)
-     * @param {color} The color filter to apply
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {string} color The color filter to apply
      */
     static colorFilter(imageData, color) {
         for (var i = 0; i < imageData.data.length; i += 4) {
@@ -83,8 +78,8 @@ class FuzzyLogic {
     
     /**
      * Applies a invert filter with optional color
-     * @param {imageData} The image data object (from canvas context)
-     * @param {color} The color filter to apply
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {string} color The color filter to apply
      */
     static invert(imageData, color) {
         for (var i = 0; i < imageData.data.length; i += 4) {
@@ -120,7 +115,7 @@ class FuzzyLogic {
     
     /**
      * Applies a greyscale filter
-     * @param {imageData} The image data object (from canvas context)
+     * @param {object} imageData The image data object (from canvas context)
      */
     static greyscale(imageData) {
         for (var i = 0; i < imageData.data.length; i += 4) {
@@ -131,8 +126,8 @@ class FuzzyLogic {
     
     /**
      * Applies a pixelation effect
-     * @param {imageData} The image data object (from canvas context)
-     * @param {pixelSize} The pixel size
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} pixelSize The pixel size
      */
     static pixelate(imageData, pixelSize) {
         const width = imageData.width;
@@ -166,8 +161,8 @@ class FuzzyLogic {
     
     /**
      * Applies a box blur effect
-     * @param {imageData} The image data object (from canvas context)
-     * @param {blurSize} Strength of the blur
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} blurSize Strength of the blur
      */
     static boxBlur(imageData, blurSize) {
         const size = (!blurSize || typeof blurSize !== 'number' || blurSize < 0) ? 0 : blurSize;
@@ -176,8 +171,8 @@ class FuzzyLogic {
   
     /**
      * Applies a horizontal blur effect
-     * @param {imageData} The image data object (from canvas context)
-     * @param {blurSize} Strength of the blur
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} blur Strength of the blur
      */
     static horizontalBlur(imageData, blur) {
         const size = (!blur || typeof blur !== 'number' || blur < 0) ? 0 : blur;
@@ -186,8 +181,8 @@ class FuzzyLogic {
     
     /**
      * Applies a vertical blur effect
-     * @param {imageData} The image data object (from canvas context)
-     * @param {blurSize} Strength of the blur
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} blur Strength of the blur
      */
     static verticalBlur(imageData, blur) {
         const size = (!blur || typeof blur !== 'number' || blur < 0) ? 0 : blur;
@@ -196,7 +191,7 @@ class FuzzyLogic {
   
     /**
      * Applies a gaussian blur effect
-     * @param {imageData} The image data object (from canvas context)
+     * @param {object} imageData The image data object (from canvas context)
      */
     static gaussianBlur(imageData) {
         this._convolution(imageData, Matrices.gaussianblur, 16);
@@ -204,7 +199,7 @@ class FuzzyLogic {
     
     /**
      * Applies an emboss effect
-     * @param {imageData} The image data object (from canvas context)
+     * @param {object} imageData The image data object (from canvas context)
      */
     static emboss(imageData) {
         this._convolution(imageData, Matrices.emboss, 1);
@@ -212,7 +207,7 @@ class FuzzyLogic {
   
     /**
      * Applies a sharpen effect
-     * @param {imageData} The image data object (from canvas context)
+     * @param {object} imageData The image data object (from canvas context)
      */
     static sharpen(imageData) {
         this._convolution(imageData, Matrices.sharpen, 1);
@@ -220,8 +215,8 @@ class FuzzyLogic {
   
     /**
      * Applies a luminosity effect
-     * @param {imageData} The image data object (from canvas context)
-     * @param {value} The amount to lighten or darken
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} value The amount to lighten or darken
      */
     static luminosity(imageData, value) {
         let matrix = Matrices.luminosity.slice(0);
@@ -234,7 +229,7 @@ class FuzzyLogic {
   
     /**
      * Applies a edge tracing effect
-     * @param {imageData} The image data object (from canvas context)
+     * @param {object} imageData The image data object (from canvas context)
      */
     static edgetrace(imageData) {
         this._convolution(imageData, Matrices.edge, 1);
@@ -242,20 +237,19 @@ class FuzzyLogic {
   
     /**
      * Applies the provided convolution matrix and options
-     * @param {imageData} The image data object (from canvas context)
-     * @param {parameters} Object containing convolution matrix, divisor, and offset
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {object} parameters Object containing convolution matrix, divisor, and offset
      */
     static convolution(imageData, parameters) {        
         this._convolution(imageData, parameters.matrix, parameters.divisor, parameters.offset);
     }
     
-    /**
+    /*
      * Applies the convolution matrix
-     * @param {imageData} The image data object (from canvas context)
-     * @param {matrix} The 3x3 convolution matrix
-     * @param {divisor} The divisor value
-     * @param {offset} The offset value
-     * @api private
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {array} matrix The 3x3 convolution matrix
+     * @param {number} divisor The divisor value
+     * @param {number} offset The offset value
      */
     static _convolution(imageData, matrix, divisor, offset) {
         if(!matrix || !(matrix instanceof Array) || matrix.length !== 3) {
@@ -281,13 +275,12 @@ class FuzzyLogic {
         }
     }
     
-    /**
+    /*
      * Gets the pixel at the provided x, y coordinate
-     * @param {imageData} The image data object (from canvas context)
-     * @param {x} The x position
-     * @param {y} The y position
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} x The x position
+     * @param {number} y The y position
      * @returns {object} The pixel object
-     * @api private
      */
     static _getPixel(imageData, x, y) {
         const index = (x + y * imageData.width) * 4;
@@ -299,14 +292,13 @@ class FuzzyLogic {
         );
     }
     
-    /**
+    /*
      * Sets the pixel at x,y of the pixel buffer with the values of given pixel 
-     * @param {pixelBuffer} Pixel buffer (array of integer values)
-     * @param {width} The width of the img/canvas
-     * @param {x} The x position
-     * @param {y} The y position
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} width The width of the img/canvas
+     * @param {number} x The x position
+     * @param {number} y The y position
      * @param {pixel} The pixel object
-     * @api private
      */
     static _setPixel(pixelBuffer, width, x, y, pixel) {
         const index = (x + y * width) * 4;
@@ -316,17 +308,16 @@ class FuzzyLogic {
         pixelBuffer[index + 3] = pixel.A();
     }
     
-    /**
+    /*
      * Gets the average pixel color in an area
-     * @param {imageData} The image data object (from canvas context)
-     * @param {x} The x position
-     * @param {y} The y position
-     * @param {width} The width of img/canvas
-     * @param {height} The height of img/canvas
-     * @param {wSize} The width of the area to average
-     * @param {hSize} The height of the area to average
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} x The x position
+     * @param {number} y The y position
+     * @param {number} width The width of the img/canvas
+     * @param {number} height The height of the img/canvas
+     * @param {number} wSize The width of the area to average
+     * @param {number} hSize The height of the area to average
      * @returns {object} The pixel object
-     * @api private
      */
     static _getAvgPixel(imageData, x, y, width, height, wSize, hSize) {
         let avgR = 0;
@@ -354,16 +345,15 @@ class FuzzyLogic {
         return new Pixel (avgR, avgB, avgG);
     }
     
-    /**
+    /*
      * Gets sum of neighboring pixel values
-     * @param {imageData} The image data object (from canvas context)
-     * @param {x} The x position
-     * @param {y} The y position
-     * @param {matrix} The 3x3 convolution matrix
-     * @param {divisor} The divisor value
-     * @param {offset} The offset value
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} x The x position
+     * @param {number} y The y position
+     * @param {array} matrix The 3x3 convolution matrix
+     * @param {number} divisor The divisor value
+     * @param {number} offset The offset value
      * @returns {object} The pixel object
-     * @api private
      */
     static _getNeighborSum (imageData, x, y, matrix, divisor, offset) {
         let redSum = 0;
@@ -390,12 +380,11 @@ class FuzzyLogic {
         return new Pixel(red, green, blue);
     }
     
-    /**
+    /*
      * Applies a motion blur effect
-     * @param {imageData} The image data object (from canvas context)
-     * @param {w} The width of the blur
-     * @param {h} The height of the blur
-     * @api private
+     * @param {object} imageData The image data object (from canvas context)
+     * @param {number} w The width of the blur
+     * @param {number} h The height of the blur
      */
     static _motionBlur(imageData, w, h) {
         h = h < 0 ? 0 : h;

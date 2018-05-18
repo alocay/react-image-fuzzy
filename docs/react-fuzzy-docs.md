@@ -2,53 +2,36 @@
 
 ### Table of Contents
 
--   [Filters][1]
--   [Fuzzy][2]
-    -   [componentDidMount][3]
-    -   [componentWillReceiveProps][4]
-    -   [loadImage][5]
-    -   [onImgLoaded][6]
-    -   [setImageDataFromOriginalImage][7]
-    -   [processImage][8]
-    -   [applyFilter][9]
-    -   [render][10]
-    -   [propTypes][11]
-    -   [defaultPropTypes][12]
--   [Colors][13]
--   [Matrices][14]
--   [FuzzyLogic][15]
-    -   [colorFilter][16]
-    -   [invert][17]
-    -   [greyscale][18]
-    -   [pixelate][19]
-    -   [boxBlur][20]
-    -   [horizontalBlur][21]
-    -   [verticalBlur][22]
-    -   [gaussianBlur][23]
-    -   [emboss][24]
-    -   [sharpen][25]
-    -   [luminosity][26]
-    -   [edgetrace][27]
-    -   [convolution][28]
-    -   [\_convolution][29]
-    -   [\_getPixel][30]
-    -   [\_setPixel][31]
-    -   [\_getAvgPixel][32]
-    -   [\_getNeighborSum][33]
-    -   [\_motionBlur][34]
--   [Pixel][35]
-    -   [R][36]
-    -   [G][37]
-    -   [B][38]
-    -   [A][39]
-
-## Filters
-
-Filters used by Fuzzy. Mainly as a helper.
-
-## 
-
-Simple helper object to create a filter object
+-   [Fuzzy][1]
+    -   [componentDidMount][2]
+    -   [componentWillReceiveProps][3]
+    -   [loadImage][4]
+    -   [onImgLoaded][5]
+    -   [setImageDataFromOriginalImage][6]
+    -   [processImage][7]
+    -   [applyFilter][8]
+    -   [render][9]
+    -   [propTypes][10]
+    -   [defaultPropTypes][11]
+-   [FuzzyLogic][12]
+    -   [colorFilter][13]
+    -   [invert][14]
+    -   [greyscale][15]
+    -   [pixelate][16]
+    -   [boxBlur][17]
+    -   [horizontalBlur][18]
+    -   [verticalBlur][19]
+    -   [gaussianBlur][20]
+    -   [emboss][21]
+    -   [sharpen][22]
+    -   [luminosity][23]
+    -   [edgetrace][24]
+    -   [convolution][25]
+-   [Pixel][26]
+    -   [R][27]
+    -   [G][28]
+    -   [B][29]
+    -   [A][30]
 
 ## Fuzzy
 
@@ -59,7 +42,6 @@ The Fuzzy React component
 **Parameters**
 
 -   `props`  
--   `The` **props** properties
 
 ### componentDidMount
 
@@ -71,8 +53,7 @@ Handles new properties. Either loads a new image or applies new filters on the o
 
 **Parameters**
 
--   `nextProps`  
--   `The` **nextProps** new properties
+-   `nextProps` **[object][31]** The new properties
 
 ### loadImage
 
@@ -80,7 +61,7 @@ Initiates the image loading
 
 **Parameters**
 
--   `url`  
+-   `url` **[string][32]** The image url
 
 ### onImgLoaded
 
@@ -96,12 +77,9 @@ Processes the filters and applies them
 
 **Parameters**
 
--   `filter`  
--   `options`  
--   `useImg`  
--   `The` **filter** filter or array of filters to apply
--   `Any` **options** provided options
--   `Flag` **useImg** indicating if an img element is being used
+-   `filter` **[array][33]** The string filter or array of filters to apply
+-   `options` **[string][32]** Any provided options (number or string)
+-   `useImg` **[boolean][34]** Flag indicating if an img element is being used
 
 ### applyFilter
 
@@ -109,10 +87,8 @@ Applies the filter
 
 **Parameters**
 
--   `filter`  
--   `options`  
--   `The` **filter** filter to apply
--   `Filter` **options** options
+-   `filter` **[string][32]** The filter to apply
+-   `options` **[string][32]** Filter options (string or number)
 
 ### render
 
@@ -126,14 +102,6 @@ Expected property types
 
 Default property types
 
-## Colors
-
-Colors used for filtering
-
-## Matrices
-
-Various predefined convolution matrices used for effects
-
 ## FuzzyLogic
 
 The main logic class for image processing
@@ -144,10 +112,8 @@ Applies a color filter
 
 **Parameters**
 
--   `imageData`  
--   `color`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **color** color filter to apply
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `color` **[string][32]** The color filter to apply
 
 ### invert
 
@@ -155,10 +121,8 @@ Applies a invert filter with optional color
 
 **Parameters**
 
--   `imageData`  
--   `color`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **color** color filter to apply
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `color` **[string][32]** The color filter to apply
 
 ### greyscale
 
@@ -166,8 +130,7 @@ Applies a greyscale filter
 
 **Parameters**
 
--   `imageData`  
--   `The` **imageData** image data object (from canvas context)
+-   `imageData` **[object][31]** The image data object (from canvas context)
 
 ### pixelate
 
@@ -175,10 +138,8 @@ Applies a pixelation effect
 
 **Parameters**
 
--   `imageData`  
--   `pixelSize`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **pixelSize** pixel size
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `pixelSize` **[number][35]** The pixel size
 
 ### boxBlur
 
@@ -186,10 +147,8 @@ Applies a box blur effect
 
 **Parameters**
 
--   `imageData`  
--   `blurSize`  
--   `The` **imageData** image data object (from canvas context)
--   `Strength` **blurSize** of the blur
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `blurSize` **[number][35]** Strength of the blur
 
 ### horizontalBlur
 
@@ -197,10 +156,8 @@ Applies a horizontal blur effect
 
 **Parameters**
 
--   `imageData`  
--   `blur`  
--   `The` **imageData** image data object (from canvas context)
--   `Strength` **blurSize** of the blur
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `blur` **[number][35]** Strength of the blur
 
 ### verticalBlur
 
@@ -208,10 +165,8 @@ Applies a vertical blur effect
 
 **Parameters**
 
--   `imageData`  
--   `blur`  
--   `The` **imageData** image data object (from canvas context)
--   `Strength` **blurSize** of the blur
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `blur` **[number][35]** Strength of the blur
 
 ### gaussianBlur
 
@@ -219,8 +174,7 @@ Applies a gaussian blur effect
 
 **Parameters**
 
--   `imageData`  
--   `The` **imageData** image data object (from canvas context)
+-   `imageData` **[object][31]** The image data object (from canvas context)
 
 ### emboss
 
@@ -228,8 +182,7 @@ Applies an emboss effect
 
 **Parameters**
 
--   `imageData`  
--   `The` **imageData** image data object (from canvas context)
+-   `imageData` **[object][31]** The image data object (from canvas context)
 
 ### sharpen
 
@@ -237,8 +190,7 @@ Applies a sharpen effect
 
 **Parameters**
 
--   `imageData`  
--   `The` **imageData** image data object (from canvas context)
+-   `imageData` **[object][31]** The image data object (from canvas context)
 
 ### luminosity
 
@@ -246,10 +198,8 @@ Applies a luminosity effect
 
 **Parameters**
 
--   `imageData`  
--   `value`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **value** amount to lighten or darken
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `value` **[number][35]** The amount to lighten or darken
 
 ### edgetrace
 
@@ -257,8 +207,7 @@ Applies a edge tracing effect
 
 **Parameters**
 
--   `imageData`  
--   `The` **imageData** image data object (from canvas context)
+-   `imageData` **[object][31]** The image data object (from canvas context)
 
 ### convolution
 
@@ -266,114 +215,8 @@ Applies the provided convolution matrix and options
 
 **Parameters**
 
--   `imageData`  
--   `parameters`  
--   `The` **imageData** image data object (from canvas context)
--   `Object` **parameters** containing convolution matrix, divisor, and offset
-
-### \_convolution
-
-Applies the convolution matrix
-
-**Parameters**
-
--   `imageData`  
--   `matrix`  
--   `divisor`  
--   `offset`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **matrix** 3x3 convolution matrix
--   `The` **divisor** divisor value
--   `The` **offset** offset value
-
-### \_getPixel
-
-Gets the pixel at the provided x, y coordinate
-
-**Parameters**
-
--   `imageData`  
--   `x`  
--   `y`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **x** x position
--   `The` **y** y position
-
-Returns **[object][40]** The pixel object
-
-### \_setPixel
-
-Sets the pixel at x,y of the pixel buffer with the values of given pixel
-
-**Parameters**
-
--   `pixelBuffer`  
--   `width`  
--   `x`  
--   `y`  
--   `pixel`  
--   `Pixel` **pixelBuffer** buffer (array of integer values)
--   `The` **width** width of the img/canvas
--   `The` **x** x position
--   `The` **y** y position
--   `The` **pixel** pixel object
-
-### \_getAvgPixel
-
-Gets the average pixel color in an area
-
-**Parameters**
-
--   `imageData`  
--   `x`  
--   `y`  
--   `width`  
--   `height`  
--   `wSize`  
--   `hSize`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **x** x position
--   `The` **y** y position
--   `The` **width** width of img/canvas
--   `The` **height** height of img/canvas
--   `The` **wSize** width of the area to average
--   `The` **hSize** height of the area to average
-
-Returns **[object][40]** The pixel object
-
-### \_getNeighborSum
-
-Gets sum of neighboring pixel values
-
-**Parameters**
-
--   `imageData`  
--   `x`  
--   `y`  
--   `matrix`  
--   `divisor`  
--   `offset`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **x** x position
--   `The` **y** y position
--   `The` **matrix** 3x3 convolution matrix
--   `The` **divisor** divisor value
--   `The` **offset** offset value
-
-Returns **[object][40]** The pixel object
-
-### \_motionBlur
-
-Applies a motion blur effect
-
-**Parameters**
-
--   `imageData`  
--   `w`  
--   `h`  
--   `The` **imageData** image data object (from canvas context)
--   `The` **w** width of the blur
--   `The` **h** height of the blur
+-   `imageData` **[object][31]** The image data object (from canvas context)
+-   `parameters` **[object][31]** Object containing convolution matrix, divisor, and offset
 
 ## Pixel
 
@@ -381,117 +224,101 @@ Very simple pixel class
 
 **Parameters**
 
--   `red`  
--   `green`  
--   `blue`  
--   `alpha`  
--   `The` **red** red integer value
--   `The` **green** green integer value
--   `The` **blue** blue integer value
--   `The` **alpha** alpha integer value
+-   `red` **[number][35]** The red integer value
+-   `green` **[number][35]** The green integer value
+-   `blue` **[number][35]** The blue integer value
+-   `alpha` **[number][35]** The alpha integer value
 
 ### R
 
 Gets the red value
 
-Returns **[number][41]** The red value
+Returns **[number][35]** The red value
 
 ### G
 
 Gets the green value
 
-Returns **[number][41]** The green value
+Returns **[number][35]** The green value
 
 ### B
 
 Gets the blue value
 
-Returns **[number][41]** The blue value
+Returns **[number][35]** The blue value
 
 ### A
 
 Gets the alpha value
 
-Returns **[number][41]** The alpha value
+Returns **[number][35]** The alpha value
 
-[1]: #filters
+[1]: #fuzzy
 
-[2]: #fuzzy
+[2]: #componentdidmount
 
-[3]: #componentdidmount
+[3]: #componentwillreceiveprops
 
-[4]: #componentwillreceiveprops
+[4]: #loadimage
 
-[5]: #loadimage
+[5]: #onimgloaded
 
-[6]: #onimgloaded
+[6]: #setimagedatafromoriginalimage
 
-[7]: #setimagedatafromoriginalimage
+[7]: #processimage
 
-[8]: #processimage
+[8]: #applyfilter
 
-[9]: #applyfilter
+[9]: #render
 
-[10]: #render
+[10]: #proptypes
 
-[11]: #proptypes
+[11]: #defaultproptypes
 
-[12]: #defaultproptypes
+[12]: #fuzzylogic
 
-[13]: #colors
+[13]: #colorfilter
 
-[14]: #matrices
+[14]: #invert
 
-[15]: #fuzzylogic
+[15]: #greyscale
 
-[16]: #colorfilter
+[16]: #pixelate
 
-[17]: #invert
+[17]: #boxblur
 
-[18]: #greyscale
+[18]: #horizontalblur
 
-[19]: #pixelate
+[19]: #verticalblur
 
-[20]: #boxblur
+[20]: #gaussianblur
 
-[21]: #horizontalblur
+[21]: #emboss
 
-[22]: #verticalblur
+[22]: #sharpen
 
-[23]: #gaussianblur
+[23]: #luminosity
 
-[24]: #emboss
+[24]: #edgetrace
 
-[25]: #sharpen
+[25]: #convolution
 
-[26]: #luminosity
+[26]: #pixel
 
-[27]: #edgetrace
+[27]: #r
 
-[28]: #convolution
+[28]: #g
 
-[29]: #_convolution
+[29]: #b
 
-[30]: #_getpixel
+[30]: #a
 
-[31]: #_setpixel
+[31]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[32]: #_getavgpixel
+[32]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[33]: #_getneighborsum
+[33]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[34]: #_motionblur
+[34]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[35]: #pixel
-
-[36]: #r
-
-[37]: #g
-
-[38]: #b
-
-[39]: #a
-
-[40]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-[41]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[35]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

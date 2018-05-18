@@ -4,10 +4,10 @@
 class Pixel {
     /**
      * Pixel constructor
-     * @param {red} The red integer value
-     * @param {green} The green integer value
-     * @param {blue} The blue integer value
-     * @param {alpha} The alpha integer value
+     * @param {number} red The red integer value
+     * @param {number} green The green integer value
+     * @param {number} blue The blue integer value
+     * @param {number} alpha The alpha integer value
      */
     constructor(red, green, blue, alpha) {
         this.r = (red == null || typeof red !== 'number') ? 0 : Math.min(255, Math.max(0, red));

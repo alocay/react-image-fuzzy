@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import FuzzyLogic, { Colors } from './FuzzyLogic.js';
 
-/**
+/*
  * Filters used by Fuzzy. Mainly as a helper.
  */
 const Filters = {
@@ -24,7 +24,7 @@ const Filters = {
     Convolution: "convolution"
 }
 
-/**
+/*
  * Simple helper object to create a filter object
  */
 const Filter = function(filter, options) {
@@ -37,9 +37,9 @@ const Filter = function(filter, options) {
  */
 class Fuzzy extends Component{
     
-    /**
+    /*
      * The constructor
-     * @param {props} The properties
+     * @param {object} props Component properties
      */
     constructor(props) {
         super(props);
@@ -61,7 +61,7 @@ class Fuzzy extends Component{
     
     /**
      * Handles new properties. Either loads a new image or applies new filters on the original image.
-     * @param {nextProps} The new properties
+     * @param {object} nextProps The new properties
      */
     componentWillReceiveProps(nextProps) {
         if (nextProps.url != this.props.url) {
@@ -74,6 +74,7 @@ class Fuzzy extends Component{
     
     /**
      * Initiates the image loading
+     * @param {string} url The image url
      */
     loadImage(url) {
         if (!url) return;
@@ -105,9 +106,9 @@ class Fuzzy extends Component{
     
     /**
      * Processes the filters and applies them
-     * @param {filter} The filter or array of filters to apply
-     * @param {options} Any provided options
-     * @param {useImg} Flag indicating if an img element is being used
+     * @param {array} filter The string filter or array of filters to apply
+     * @param {string} options Any provided options (number or string)
+     * @param {boolean} useImg Flag indicating if an img element is being used
      */
     processImage(filter, options, useImg) {
         if (!filter) return;
@@ -133,8 +134,8 @@ class Fuzzy extends Component{
     
     /**
      * Applies the filter
-     * @param {filter} The filter to apply
-     * @param {options} Filter options
+     * @param {string} filter The filter to apply
+     * @param {string} options Filter options (string or number)
      */
     applyFilter(filter, options) {
         switch (filter) {

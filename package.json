@@ -22,6 +22,7 @@
     "bugs": {
         "url": "https://github.com/alocay/react-image-fuzzy/issues"
     },
+    "keywords": ["image","image processing","fuzzy","fuzzyjs","image filters"],
     "homepage": "https://github.com/alocay/react-image-fuzzy#readme",
     "devDependencies": {
         "babel-cli": "^6.26.0",

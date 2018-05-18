@@ -11,27 +11,25 @@
     -   [processImage][7]
     -   [applyFilter][8]
     -   [render][9]
-    -   [propTypes][10]
-    -   [defaultPropTypes][11]
--   [FuzzyLogic][12]
-    -   [colorFilter][13]
-    -   [invert][14]
-    -   [greyscale][15]
-    -   [pixelate][16]
-    -   [boxBlur][17]
-    -   [horizontalBlur][18]
-    -   [verticalBlur][19]
-    -   [gaussianBlur][20]
-    -   [emboss][21]
-    -   [sharpen][22]
-    -   [luminosity][23]
-    -   [edgetrace][24]
-    -   [convolution][25]
--   [Pixel][26]
-    -   [R][27]
-    -   [G][28]
-    -   [B][29]
-    -   [A][30]
+-   [FuzzyLogic][10]
+    -   [colorFilter][11]
+    -   [invert][12]
+    -   [greyscale][13]
+    -   [pixelate][14]
+    -   [boxBlur][15]
+    -   [horizontalBlur][16]
+    -   [verticalBlur][17]
+    -   [gaussianBlur][18]
+    -   [emboss][19]
+    -   [sharpen][20]
+    -   [luminosity][21]
+    -   [edgetrace][22]
+    -   [convolution][23]
+-   [Pixel][24]
+    -   [R][25]
+    -   [G][26]
+    -   [B][27]
+    -   [A][28]
 
 ## Fuzzy
 
@@ -53,7 +51,7 @@ Handles new properties. Either loads a new image or applies new filters on the o
 
 **Parameters**
 
--   `nextProps` **[object][31]** The new properties
+-   `nextProps` **[object][29]** The new properties
 
 ### loadImage
 
@@ -61,7 +59,7 @@ Initiates the image loading
 
 **Parameters**
 
--   `url` **[string][32]** The image url
+-   `url` **[string][30]** The image url
 
 ### onImgLoaded
 
@@ -77,9 +75,9 @@ Processes the filters and applies them
 
 **Parameters**
 
--   `filter` **[array][33]** The string filter or array of filters to apply
--   `options` **[string][32]** Any provided options (number or string)
--   `useImg` **[boolean][34]** Flag indicating if an img element is being used
+-   `filter` **[array][31]** The string filter or array of filters to apply
+-   `options` **[string][30]** Any provided options (number or string)
+-   `useImg` **[boolean][32]** Flag indicating if an img element is being used
 
 ### applyFilter
 
@@ -87,20 +85,12 @@ Applies the filter
 
 **Parameters**
 
--   `filter` **[string][32]** The filter to apply
--   `options` **[string][32]** Filter options (string or number)
+-   `filter` **[string][30]** The filter to apply
+-   `options` **[string][30]** Filter options (string or number)
 
 ### render
 
 React render function
-
-### propTypes
-
-Expected property types
-
-### defaultPropTypes
-
-Default property types
 
 ## FuzzyLogic
 
@@ -112,8 +102,8 @@ Applies a color filter
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `color` **[string][32]** The color filter to apply
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `color` **[string][30]** The color filter to apply
 
 ### invert
 
@@ -121,8 +111,8 @@ Applies a invert filter with optional color
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `color` **[string][32]** The color filter to apply
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `color` **[string][30]** The color filter to apply
 
 ### greyscale
 
@@ -130,7 +120,7 @@ Applies a greyscale filter
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
+-   `imageData` **[object][29]** The image data object (from canvas context)
 
 ### pixelate
 
@@ -138,8 +128,8 @@ Applies a pixelation effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `pixelSize` **[number][35]** The pixel size
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `pixelSize` **[number][33]** The pixel size
 
 ### boxBlur
 
@@ -147,8 +137,8 @@ Applies a box blur effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `blurSize` **[number][35]** Strength of the blur
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `blurSize` **[number][33]** Strength of the blur
 
 ### horizontalBlur
 
@@ -156,8 +146,8 @@ Applies a horizontal blur effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `blur` **[number][35]** Strength of the blur
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `blur` **[number][33]** Strength of the blur
 
 ### verticalBlur
 
@@ -165,8 +155,8 @@ Applies a vertical blur effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `blur` **[number][35]** Strength of the blur
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `blur` **[number][33]** Strength of the blur
 
 ### gaussianBlur
 
@@ -174,7 +164,7 @@ Applies a gaussian blur effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
+-   `imageData` **[object][29]** The image data object (from canvas context)
 
 ### emboss
 
@@ -182,7 +172,7 @@ Applies an emboss effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
+-   `imageData` **[object][29]** The image data object (from canvas context)
 
 ### sharpen
 
@@ -190,7 +180,7 @@ Applies a sharpen effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
+-   `imageData` **[object][29]** The image data object (from canvas context)
 
 ### luminosity
 
@@ -198,8 +188,8 @@ Applies a luminosity effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `value` **[number][35]** The amount to lighten or darken
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `value` **[number][33]** The amount to lighten or darken
 
 ### edgetrace
 
@@ -207,7 +197,7 @@ Applies a edge tracing effect
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
+-   `imageData` **[object][29]** The image data object (from canvas context)
 
 ### convolution
 
@@ -215,8 +205,8 @@ Applies the provided convolution matrix and options
 
 **Parameters**
 
--   `imageData` **[object][31]** The image data object (from canvas context)
--   `parameters` **[object][31]** Object containing convolution matrix, divisor, and offset
+-   `imageData` **[object][29]** The image data object (from canvas context)
+-   `parameters` **[object][29]** Object containing convolution matrix, divisor, and offset
 
 ## Pixel
 
@@ -224,34 +214,34 @@ Very simple pixel class
 
 **Parameters**
 
--   `red` **[number][35]** The red integer value
--   `green` **[number][35]** The green integer value
--   `blue` **[number][35]** The blue integer value
--   `alpha` **[number][35]** The alpha integer value
+-   `red` **[number][33]** The red integer value
+-   `green` **[number][33]** The green integer value
+-   `blue` **[number][33]** The blue integer value
+-   `alpha` **[number][33]** The alpha integer value
 
 ### R
 
 Gets the red value
 
-Returns **[number][35]** The red value
+Returns **[number][33]** The red value
 
 ### G
 
 Gets the green value
 
-Returns **[number][35]** The green value
+Returns **[number][33]** The green value
 
 ### B
 
 Gets the blue value
 
-Returns **[number][35]** The blue value
+Returns **[number][33]** The blue value
 
 ### A
 
 Gets the alpha value
 
-Returns **[number][35]** The alpha value
+Returns **[number][33]** The alpha value
 
 [1]: #fuzzy
 
@@ -271,54 +261,50 @@ Returns **[number][35]** The alpha value
 
 [9]: #render
 
-[10]: #proptypes
+[10]: #fuzzylogic
 
-[11]: #defaultproptypes
+[11]: #colorfilter
 
-[12]: #fuzzylogic
+[12]: #invert
 
-[13]: #colorfilter
+[13]: #greyscale
 
-[14]: #invert
+[14]: #pixelate
 
-[15]: #greyscale
+[15]: #boxblur
 
-[16]: #pixelate
+[16]: #horizontalblur
 
-[17]: #boxblur
+[17]: #verticalblur
 
-[18]: #horizontalblur
+[18]: #gaussianblur
 
-[19]: #verticalblur
+[19]: #emboss
 
-[20]: #gaussianblur
+[20]: #sharpen
 
-[21]: #emboss
+[21]: #luminosity
 
-[22]: #sharpen
+[22]: #edgetrace
 
-[23]: #luminosity
+[23]: #convolution
 
-[24]: #edgetrace
+[24]: #pixel
 
-[25]: #convolution
+[25]: #r
 
-[26]: #pixel
+[26]: #g
 
-[27]: #r
+[27]: #b
 
-[28]: #g
+[28]: #a
 
-[29]: #b
+[29]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[30]: #a
+[30]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[31]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[31]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[32]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[32]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[33]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
-
-[34]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-
-[35]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[33]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

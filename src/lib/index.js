@@ -187,7 +187,7 @@ class Fuzzy extends Component{
      */ 
     render(){
         return(
-            <div>
+            <div className={classnames({[this.props.className]: this.props.className})}>
                 <canvas className={classnames({"hide": this.props.useImg})} ref={this.canvasRef} />
                 { this.props.useImg ? <img className="image-final" ref={ finalImageElement => this.imageFinal = finalImageElement } /> : null}
             </div>
@@ -195,7 +195,7 @@ class Fuzzy extends Component{
     }
 }
 
-/**
+/*
  * Expected property types
  */
 Fuzzy.propTypes = {
@@ -209,10 +209,11 @@ Fuzzy.propTypes = {
         PropTypes.number,
         PropTypes.object
     ]),
-    useImg: PropTypes.bool
+    useImg: PropTypes.bool,
+    className: PropTypes.string
 };
 
-/**
+/*
  * Default property types
  */
 Fuzzy.defaultPropTypes = {

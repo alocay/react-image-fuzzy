@@ -1,14 +1,14 @@
 {
     "name": "react-image-fuzzy",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "A simple ReactJS component for client-side image processing",
     "main": "lib/index.js",
     "directories": {
-    "doc": "docs",
-    "lib": "lib"
+        "doc": "docs",
+        "lib": "lib"
     },
-        "scripts": {
-        "lib": "babel src/lib -d lib --copy-files",
+    "scripts": {
+        "lib": "babel src/lib -d lib --copy-files && documentation build lib/index.js -f md -o docs/react-fuzzy-docs.md",
         "lib:watch": "babel src/lib -w -d lib --copy-files",
         "start": "webpack-dev-server --mode development",
         "prod": "webpack --mode production"
@@ -29,7 +29,9 @@
         "babel-loader": "^7.1.4",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
+        "concurrently": "^3.5.1",
         "css-loader": "^0.28.11",
+        "documentation": "^6.3.3",
         "file-loader": "^1.1.11",
         "html-webpack-plugin": "^3.2.0",
         "image-webpack-loader": "^4.2.0",

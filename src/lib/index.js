@@ -29,7 +29,7 @@ const Filters = {
  */
 const Filter = function(filter, options) {
     this.filter = filter;
-    this.options = option;
+    this.options = options;
 };
 
 /**
@@ -138,6 +138,7 @@ class Fuzzy extends Component{
      * @param {string} options Filter options (string or number)
      */
     applyFilter(filter, options) {
+        console.log('Applying', filter, options);
         switch (filter) {
             case Filters.Color:
                 FuzzyLogic.colorFilter(this.imageData, options);

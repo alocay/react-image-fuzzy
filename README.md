@@ -62,7 +62,7 @@ A few helpers are accessible but not required.
 ```
 import { Filter, Filters, Colors } from 'react-image-fuzzy';
 
-const f = [new Filter(Filter.ColorFilter, Colors.red)];
+const f = [new Filter(Filter.Color, Colors.red)];
 ...
 <Fuzzy url={myImage} 
        filter={f}/> 

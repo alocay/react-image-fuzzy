@@ -14,7 +14,7 @@ Import the package in your JSX file
 
 **ES6:**  `import Fuzzy from 'react-image-fuzzy';`
   
-**<ES6:**  `require('react-image-fuzzy');`
+**<ES6:**  `const Fuzzy = require('react-image-fuzzy');`
 
 ## Examples
 Using React Fuzzy is simple. Once imported, just use the <Fuzzy /> component, providing the image, the filters, and any necessary options:

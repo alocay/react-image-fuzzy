@@ -1,5 +1,3 @@
-# FuzzyJS
-
 A simple React component for image filter/processing
 
 [Simple React Fuzzy  Demo](http://alocay.github.io/projects/fuzzyjs/index.html)

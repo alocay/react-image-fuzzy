@@ -14,7 +14,7 @@ Import the package in your JSX file
 **<ES6:**  `const Fuzzy = require('react-image-fuzzy');`
 
 ## Examples
-Using React Fuzzy is simple. Once imported, just use the <Fuzzy /> component, providing the image, the filters, and any necessary options:
+Using React Fuzzy is simple. Once imported, just use the <Fuzzy /> component, providing the image, the filters, and any necessary parameters:
 
 ```jsx
 const myImage = require('./path/to/img.png');
@@ -23,17 +23,17 @@ render() {
     <div>
         <Fuzzy url={myImage} 
                filter={'colorFilter'}
-               option={'red'} />
+               parameter={'red'} />
     </div>
 }
 ```           
 
-A single filter and option can be provided via `filter` and `option` property but an array of filter objects can also be passed to the `filter` property. When passing an array of filters, a filter object is required that contains information on the filter and options:
+A single filter and parameter can be provided via `filter` and `parameter` property but an array of filter objects can also be passed to the `filter` property. When passing an array of filters, a filter object is required that contains information on the filter and parameters:
 
 ```
 const filters = [{
    filter: 'colorFilter',
-   option: 'red'
+   parameter: 'red'
 }];
 ```
 Providing an array of filters will cause all filters to be applied one after the other:
@@ -43,11 +43,11 @@ Providing an array of filters will cause all filters to be applied one after the
 const filters = [
     {
         filter: 'colorFilter',
-        option: 'red'
+        parameter: 'red'
     },
     {
         filter: 'boxBlur',
-        option: 5
+        parameter: 5
     }
 ];
 ...

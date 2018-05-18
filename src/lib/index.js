@@ -27,9 +27,9 @@ const Filters = {
 /*
  * Simple helper object to create a filter object
  */
-const Filter = function(filter, options) {
+const Filter = function(filter, parameter) {
     this.filter = filter;
-    this.options = options;
+    this.parameter = parameter;
 };
 
 /**
@@ -66,9 +66,9 @@ class Fuzzy extends Component{
     componentWillReceiveProps(nextProps) {
         if (nextProps.url != this.props.url) {
             this.loadImage(nextProps.url);
-        } else if (nextProps.filter != this.props.filter || nextProps.options != this.props.options) {
+        } else if (nextProps.filter != this.props.filter || nextProps.parameter != this.props.parameter) {
             this.setImageDataFromOriginalImage();
-            this.processImage(nextProps.filter, nextProps.options, nextProps.useImg);
+            this.processImage(nextProps.filter, nextProps.parameter, nextProps.useImg);
         }
     }
     
@@ -93,7 +93,7 @@ class Fuzzy extends Component{
         this.canvasContext.drawImage(this.originalImage, 0, 0, this.originalImage.width, this.originalImage.height);
         this.setImageDataFromOriginalImage();
         
-        this.processImage(this.props.filter, this.props.options, this.props.useImg);
+        this.processImage(this.props.filter, this.props.parameter, this.props.useImg);
     }
     
     /**
@@ -107,19 +107,19 @@ class Fuzzy extends Component{
     /**
      * Processes the filters and applies them
      * @param {array} filter The string filter or array of filters to apply
-     * @param {string} options Any provided options (number or string)
+     * @param {string} parameter Any provided parameter (number or string)
      * @param {boolean} useImg Flag indicating if an img element is being used
      */
-    processImage(filter, options, useImg) {
+    processImage(filter, parameter, useImg) {
         if (!filter) return;
         
         let filtersToApply = null;
         
         if (typeof filter === 'string') {
-            this.applyFilter(filter, options);
+            this.applyFilter(filter, parameter);
         } else if(filter instanceof Array) {
             for(var i = 0; i < filter.length; i++) {
-                this.applyFilter(filter[i].filter, filter[i].options);
+                this.applyFilter(filter[i].filter, filter[i].parameter);
             }
         } else {
             return;
@@ -135,34 +135,34 @@ class Fuzzy extends Component{
     /**
      * Applies the filter
      * @param {string} filter The filter to apply
-     * @param {string} options Filter options (string or number)
+     * @param {string} parameter Filter parameter (string or number)
      */
-    applyFilter(filter, options) {
-        console.log('Applying', filter, options);
+    applyFilter(filter, parameter) {
+        console.log('Applying', filter, parameter);
         switch (filter) {
             case Filters.Color:
-                FuzzyLogic.colorFilter(this.imageData, options);
+                FuzzyLogic.colorFilter(this.imageData, parameter);
                 break;
             case Filters.Invert: 
-                FuzzyLogic.invert(this.imageData, options);
+                FuzzyLogic.invert(this.imageData, parameter);
                 break;
             case Filters.Greyscale:
                 FuzzyLogic.greyscale(this.imageData);
                 break;
             case Filters.Pixelate:
-                FuzzyLogic.pixelate(this.imageData, options, this.originalImage.width, this.originalImage.height);
+                FuzzyLogic.pixelate(this.imageData, parameter, this.originalImage.width, this.originalImage.height);
                 break;
             case Filters.BoxBlur:
-                FuzzyLogic.boxBlur(this.imageData, options);
+                FuzzyLogic.boxBlur(this.imageData, parameter);
                 break;
             case Filters.HorizontalBlur:
-                FuzzyLogic.horizontalBlur(this.imageData, options);
+                FuzzyLogic.horizontalBlur(this.imageData, parameter);
                 break;
             case Filters.VerticalBlur:
-                FuzzyLogic.verticalBlur(this.imageData, options);
+                FuzzyLogic.verticalBlur(this.imageData, parameter);
                 break;
             case Filters.GuassianBlur:
-                FuzzyLogic.gaussianBlur(this.imageData, options);
+                FuzzyLogic.gaussianBlur(this.imageData, parameter);
                 break;
             case Filters.Emboss:
                 FuzzyLogic.emboss(this.imageData);
@@ -171,13 +171,13 @@ class Fuzzy extends Component{
                 FuzzyLogic.sharpen(this.imageData);
                 break;
             case Filters.Luminosity:
-                FuzzyLogic.luminosity(this.imageData, options);
+                FuzzyLogic.luminosity(this.imageData, parameter);
                 break;
             case Filters.Edge:
                 FuzzyLogic.edgetrace(this.imageData);
                 break;
             case Filters.Convolution:
-                FuzzyLogic.convolution(this.imageData, options);
+                FuzzyLogic.convolution(this.imageData, parameter);
                 break;
         }
     }
@@ -204,7 +204,7 @@ Fuzzy.propTypes = {
         PropTypes.string.isRequired,
         PropTypes.array.isRequired
     ]),
-    options: PropTypes.oneOfType([
+    parameter: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
         PropTypes.object

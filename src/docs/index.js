@@ -5,12 +5,12 @@ import "./css/style.css";
 
 const FuzzyImage = require('./fuzzy_sm.jpg');
 
-const FuzzyExample = ({url, filter, options, caption}) => {
+const FuzzyExample = ({url, filter, parameter, caption}) => {
     return (
         <div className="col">            
             <Fuzzy url={url} 
                    filter={filter}
-                   options={options} />
+                   parameter={parameter} />
             <div className="caption">{caption}</div>
         </div>
     );
@@ -58,7 +58,7 @@ const FuzzyDemo = () => {
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Color Filter"}
                                   filter={Filters.Color}
-                                  options={'red'} />
+                                  parameter={'red'} />
                                   
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Inverted"}
@@ -67,7 +67,7 @@ const FuzzyDemo = () => {
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Inverted w/ Color"}
                                   filter={Filters.Invert} 
-                                  options={'red'} /> 
+                                  parameter={'red'} /> 
                                   
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Greyscale"}
@@ -80,22 +80,22 @@ const FuzzyDemo = () => {
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Pixelate"}
                                   filter={Filters.Pixelate}
-                                  options={5} />
+                                  parameter={5} />
                                   
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Box Blur"}
                                   filter={Filters.BoxBlur}
-                                  options={3} />                
+                                  parameter={3} />                
                     
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Horizontal Blur"}
                                   filter={Filters.HorizontalBlur}
-                                  options={8} />
+                                  parameter={8} />
                     
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Vertical Blur"}
                                   filter={Filters.VerticalBlur}
-                                  options={8} />
+                                  parameter={8} />
                 </div>
             </div>
             <div className="group">
@@ -108,12 +108,12 @@ const FuzzyDemo = () => {
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Darken"}
                                   filter={Filters.Luminosity}
-                                  options={0.5} />
+                                  parameter={0.5} />
                                   
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Lighten"}
                                   filter={Filters.Luminosity}
-                                  options={1.5} />
+                                  parameter={1.5} />
                                   
                     <FuzzyExample url={FuzzyImage}
                                   caption={"Sharpen"}

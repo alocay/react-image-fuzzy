@@ -76,7 +76,7 @@ Processes the filters and applies them
 **Parameters**
 
 -   `filter` **[array][31]** The string filter or array of filters to apply
--   `options` **[string][30]** Any provided options (number or string)
+-   `parameter` **[string][30]** Any provided parameter (number or string)
 -   `useImg` **[boolean][32]** Flag indicating if an img element is being used
 
 ### applyFilter
@@ -86,7 +86,7 @@ Applies the filter
 **Parameters**
 
 -   `filter` **[string][30]** The filter to apply
--   `options` **[string][30]** Filter options (string or number)
+-   `parameter` **[string][30]** Filter parameter (string or number)
 
 ### render
 

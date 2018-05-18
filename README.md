@@ -1,6 +1,6 @@
 A simple React component for image filter/processing
 
-[Simple React Fuzzy  Demo](http://alocay.github.io/projects/fuzzyjs/index.html)
+[Simple React Fuzzy  Demo](https://alocay.github.io/react-image-fuzzy/)
 
 ## Getting Started
 Download the package via NPM 
@@ -92,7 +92,7 @@ By default React Fuzzy will display a `canvas` element for the resulting image. 
 Refer to the documentation for more information.
 
 ## Documentation
-[Basic documentation](https://github.com/alocay/FuzzyJS/blob/master/docs/fuzzy-js-docs.md)  
+[Basic documentation](https://github.com/alocay/react-image-fuzzy/blob/master/docs/react-fuzzy-docs.md)  
 More to come.
 
 ## License

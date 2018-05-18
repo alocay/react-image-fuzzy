@@ -1,6 +1,6 @@
 {
     "name": "react-image-fuzzy",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "A simple ReactJS component for client-side image processing",
     "main": "lib/index.js",
     "directories": {

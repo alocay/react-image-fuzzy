@@ -12,8 +12,7 @@ npm install react-image-fuzzy
 
 Import the package in your JSX file
 
-**ES6:**  `import Fuzzy from 'react-image-fuzzy';`
-  
+**ES6:**  `import Fuzzy from 'react-image-fuzzy';`    
 **<ES6:**  `const Fuzzy = require('react-image-fuzzy');`
 
 ## Examples

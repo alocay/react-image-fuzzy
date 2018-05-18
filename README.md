@@ -24,8 +24,8 @@ const myImage = require('./path/to/img.png');
 render() {
     <div>
         <Fuzzy url={myImage} 
-                   filter={'colorFilter'}
-                   option={'red'} />
+               filter={'colorFilter'}
+               option={'red'} />
     </div>
 }
 ```           
@@ -54,15 +54,29 @@ const filters = [
 ];
 ...
 <Fuzzy url={myImage} 
-           filter={filters} />
+       filter={filters} />
+```
+
+A few helpers are accessible but not required.
+
+```
+import { Filter, Filters, Colors } from 'react-image-fuzzy';
+
+const f = [new Filter(Filter.ColorFilter, Colors.red)];
+...
+<Fuzzy url={myImage} 
+       filter={f}/> 
+       
+<Fuzzy url={myImage} 
+       filter={Filters.Greyscale} /> 
 ```
 
 By default React Fuzzy will display a `canvas` element for the resulting image. If an `img` element is desired, just use the `useImg` property:
 
 ```
 <Fuzzy url={myImage} 
-           filter={filters} 
-           useImg={true} />
+       filter={filters} 
+       useImg={true} />
 ```
 
 ###Available filters

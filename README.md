@@ -71,7 +71,7 @@ const f = [new Filter(Filter.ColorFilter, Colors.red)];
        filter={Filters.Greyscale} /> 
 ```
 
-By default React Fuzzy will display a `canvas` element for the resulting image. If an `img` element is desired, just use the `useImg` property:
+By default React Fuzzy will display a `canvas` element for the resulting image. If an `img` element is desired in the DOM, just use the `useImg` property:
 
 ```
 <Fuzzy url={myImage} 

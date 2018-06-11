@@ -3,7 +3,7 @@ A simple React component for image filter/processing
 [Simple React Fuzzy  Demo](https://alocay.github.io/react-image-fuzzy/)
 
 [![Build Status](https://travis-ci.org/alocay/react-image-fuzzy.svg?branch=master)](https://travis-ci.org/alocay/react-image-fuzzy)
-[![Node version](https://img.shields.io/node/v/react-image-fuzzy.svg?style=flat)](http://nodejs.org/download/)
+[![npm version](https://badge.fury.io/js/react-image-fuzzy.svg)](https://badge.fury.io/js/react-image-fuzzy)
 [![dependencies Status](https://david-dm.org/alocay/react-image-fuzzy/status.svg)](https://david-dm.org/alocay/react-image-fuzzy)
 [![devDependencies Status](https://david-dm.org/alocay/react-image-fuzzy/dev-status.svg)](https://david-dm.org/alocay/react-image-fuzzy?type=dev)
 [![Inline docs](http://inch-ci.org/github/alocay/react-image-fuzzy.svg?branch=master)](http://inch-ci.org/github/alocay/react-image-fuzzy)

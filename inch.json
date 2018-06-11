@@ -1,0 +1,8 @@
+{
+  "files": {
+    "excluded": [
+      "docs",
+      "src/docs"
+    ]
+  }
+}

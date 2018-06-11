@@ -9,6 +9,7 @@ A simple React component for image filter/processing
 
 [![Inline docs](http://inch-ci.org/github/alocay/react-image-fuzzy.svg?branch=master)](http://inch-ci.org/github/alocay/react-image-fuzzy)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f13fd9a3135459ab4ca7/maintainability)](https://codeclimate.com/github/alocay/react-image-fuzzy/maintainability)
+[![NSP Status](https://nodesecurity.io/orgs/alocay/projects/7961934f-400b-4587-bc78-19b2009d7a19/badge)](https://nodesecurity.io/orgs/alocay/projects/7961934f-400b-4587-bc78-19b2009d7a19)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 

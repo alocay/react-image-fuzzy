@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import FuzzyLogic, { Colors } from './FuzzyLogic.js';
+import FuzzyLogic, { Colors } from './fuzzylogic.js';
 
 /*
  * Filters used by Fuzzy. Mainly as a helper.

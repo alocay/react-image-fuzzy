@@ -1,4 +1,4 @@
-import Pixel from './Pixel.js';
+import Pixel from './pixel.js';
 
 // Colors used for filtering
 const Colors = {

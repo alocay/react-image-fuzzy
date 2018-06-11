@@ -1,4 +1,6 @@
 docs
 src
+tests
 .babelrc
 webpack.config.js
+koala-config.json

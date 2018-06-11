@@ -6,6 +6,7 @@ A simple React component for image filter/processing
 [![npm version](https://badge.fury.io/js/react-image-fuzzy.svg)](https://badge.fury.io/js/react-image-fuzzy)
 [![dependencies Status](https://david-dm.org/alocay/react-image-fuzzy/status.svg)](https://david-dm.org/alocay/react-image-fuzzy)
 [![devDependencies Status](https://david-dm.org/alocay/react-image-fuzzy/dev-status.svg)](https://david-dm.org/alocay/react-image-fuzzy?type=dev)
+
 [![Inline docs](http://inch-ci.org/github/alocay/react-image-fuzzy.svg?branch=master)](http://inch-ci.org/github/alocay/react-image-fuzzy)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f13fd9a3135459ab4ca7/maintainability)](https://codeclimate.com/github/alocay/react-image-fuzzy/maintainability)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
